@@ -1,0 +1,27 @@
+{
+  "name": "go-loop",
+  "version": "1.0.0",
+  "description": "this package makes loop very simple, and can handle five type of data type at time.",
+  "main": "lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAmSomeoneInTheWorld/Go-Loop.git"
+  },
+  "keywords": [
+    "looper",
+    "go-loop",
+    "loop",
+    "loops",
+    "backend",
+    "node-js"
+  ],
+  "author": "Madhav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IAmSomeoneInTheWorld/Go-Loop/issues"
+  },
+  "homepage": "https://github.com/IAmSomeoneInTheWorld/Go-Loop#readme"
+}
