@@ -2,9 +2,14 @@ const {is_func , checkAndRun} = require('./lib/modules');
 
 // runs with single arg handle one data type and one arg at a time
 const range = (data , call)=>{
+    // if callback not a function or not provided
+    if(!is_func(call)){
+        throw new Error("callback must be required");
+    };
+
     if(Array.isArray(data)){
         for(let val in data){
-            const value = is_func(call)&&call(data[val] , val);
+            const value = call(data[val] , val);
             if(typeof value === 'boolean' && value === false) {
                 break;
             }
@@ -13,7 +18,7 @@ const range = (data , call)=>{
         return;
     }else if(typeof data === "string"){
         for(let i = 0; i < data.length; i++){
-            const value = is_func(call)&&call(data[i] , i);
+            const value = call(data[i] , i);
             if(typeof value === 'boolean' && value === false) {
                 break;
             };
@@ -23,7 +28,7 @@ const range = (data , call)=>{
     else if(typeof data === 'object'){
         let i = 0;
         for(let key in data){
-            const value = is_func(call)&&call(data[key] , key , i);
+            const value = call(data[key] , key , i);
 
             if(typeof value === 'boolean' && value === false) {
                 break;
@@ -39,7 +44,7 @@ const range = (data , call)=>{
         let i = 0;
 
         while(i < count){
-            is_func(call)&&call(i);
+            call(i);
             i++;
         };
     }else if(typeof data === 'boolean'){
@@ -50,7 +55,7 @@ const range = (data , call)=>{
         };
 
         while(isTrue){
-            is_func(call)&&call(index , setOff);
+            call(index , setOff);
             index++;
         };
     }else{
